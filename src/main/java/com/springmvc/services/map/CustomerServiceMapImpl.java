@@ -16,7 +16,7 @@ import com.springmvc.services.*;
 
 @Service
 @Profile("map")
-public class CustomerServiceMapImpl extends AbstractMapService implements CustomerService{
+public class CustomerServiceMapImpl extends AbstractMapService<Customer, Long> implements CustomerService{
 
 	
 	
@@ -25,12 +25,12 @@ public class CustomerServiceMapImpl extends AbstractMapService implements Custom
 		loadCustomers();
 	}
 	
-//	@Override
-//	public List<Customer> listAll() {
-//			
-//		return (List<Customer>) super.listAll();
-//	}	
-//	
+	@Override
+	public List<Customer> listAll() {
+			
+		return super.listAll();
+	}	
+	
 	
 	@Override
 	public Customer getById(Long id) {
@@ -39,15 +39,15 @@ public class CustomerServiceMapImpl extends AbstractMapService implements Custom
 	}
 
 	@Override
-	public void delete(Long id) {
+	public void deleteById(Long id) {
 		// TODO Auto-generated method stub
-		super.delete(id);
+		super.deleteById(id);
 	}
 	
 	@Override
 	public Customer saveOrUpdate(Customer customer) {
 		// TODO Auto-generated method stub
-		return (Customer) super.saveOrUpdate((Customer) customer);
+		return (Customer) super.saveOrUpdate(customer.getId(), (Customer) customer);
 	}
 
 
@@ -96,22 +96,12 @@ public class CustomerServiceMapImpl extends AbstractMapService implements Custom
 	}
 
 	@Override
-	public void deleteById(Long id) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public List<Customer> findByLastName(String lastName) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
-	public List<Customer> listAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 
 

@@ -11,28 +11,20 @@ import com.springmvc.services.UserService;
 
 @Service
 @Profile("map")
-public class UserServiceMapImpl extends AbstractMapService implements UserService {
+public class UserServiceMapImpl extends AbstractMapService<User, Long> implements UserService {
 
-	
-	
+		
 		
 	public UserServiceMapImpl() {
-		loadUsers();
+		entityMap  = new HashMap<>();
+		
 	}
-
-	private void loadUsers() {
-		entityMap = new HashMap();			
-		User user1 = new User("monchito", "1234");
-		user1.setId((long) 1);		
-		entityMap.put((long) 1, user1);		
+	
+	@Override
+	public List<User> listAll() {
+		// TODO Auto-generated method stub
+		return super.listAll();
 	}
-
-
-//	@Override
-//	public List<User> listAll() {
-//		// TODO Auto-generated method stub
-//		return super.listAll();
-//	}
 
 	@Override
 	public User getById(Long id) {
@@ -41,21 +33,15 @@ public class UserServiceMapImpl extends AbstractMapService implements UserServic
 	}
 
 	@Override
-	public void delete(Long id) {
+	public void deleteById(Long id) {
 		// TODO Auto-generated method stub
-		super.delete(id);
+		super.deleteById(id);
 	}
 	
 	@Override
 	public User saveOrUpdate(User user) {
 		// TODO Auto-generated method stub
-		return (User) super.saveOrUpdate((User) user);
-	}
-
-	@Override
-	public List<User> listAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return (User) super.saveOrUpdate(user.getId(), user);
 	}
 
 	@Override
@@ -64,12 +50,7 @@ public class UserServiceMapImpl extends AbstractMapService implements UserServic
 		
 	}
 
-	@Override
-	public void deleteById(Long id) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 
 
 	
