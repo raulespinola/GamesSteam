@@ -1,6 +1,6 @@
 package com.springmvc.services.jpa;
 
-import java.util.List;
+import java.util.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -59,12 +59,29 @@ public class CustomerServiceJpaDAOImpl extends AbstractJpaDAOService implements 
 	}
 
 	@Override
-	public void delete(Long id) {
+	public void deleteById(Long id) {
 		EntityManager em= emf.createEntityManager();
 		
 		em.getTransaction().begin();
 		em.remove(em.find(Customer.class, id));
 		em.getTransaction().commit();
 		
+	}
+	
+	@Override
+	public void delete(Customer customer) {
+		EntityManager em= emf.createEntityManager();
+		
+		em.getTransaction().begin();
+		em.remove(em.find(Customer.class, customer));
+		em.getTransaction().commit();
+		
+	}
+
+	@Override
+	public List<Customer> findByLastName(String lastName) {
+		EntityManager em=emf.createEntityManager();
+		
+		return em.createQuery("from Customer where lastName='lastName'", Customer.class).getResultList();
 	}
 }

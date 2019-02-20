@@ -1,18 +1,19 @@
 package com.springmvc.services;
 
-import java.util.List;
+import java.util.*;
 
-import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 
-import com.springmvc.entities.*;
+public interface CRUDService<T, ID> {
 
-public interface CRUDService<T> {
-
-    List<?>listAll();
+    List<T>listAll();
 	
-	T getById(Long id);
+	T getById(ID id);
 
-	T saveOrUpdate(T BaseEntity);
+	T saveOrUpdate(T object);
 	
-	void delete(Long id);  
+	void delete(T object);  
+	
+	void deleteById(ID id);
+	
+	
 }

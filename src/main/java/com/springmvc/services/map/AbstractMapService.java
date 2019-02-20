@@ -44,9 +44,9 @@ public abstract class AbstractMapService {
 		return (long) (Collections.max(entityMap.keySet())+1);
 	}
 	
-	public List<BaseEntityName> listAll() {
-		return new ArrayList<>(entityMap.values());
-	}
+//	public List<BaseEntityName> listAll() {
+//		return new ArrayList<>(entityMap.values());
+//	}
 	
 
 

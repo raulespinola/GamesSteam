@@ -25,11 +25,12 @@ public class CustomerServiceMapImpl extends AbstractMapService implements Custom
 		loadCustomers();
 	}
 	
-	@Override
-	public List<BaseEntityName> listAll() {
-			return super.listAll();
-	}	
-	
+//	@Override
+//	public List<Customer> listAll() {
+//			
+//		return (List<Customer>) super.listAll();
+//	}	
+//	
 	
 	@Override
 	public Customer getById(Long id) {
@@ -86,6 +87,30 @@ public class CustomerServiceMapImpl extends AbstractMapService implements Custom
 		entityMap.put((long) 1, customer1);
 		
 		
+	}
+
+	@Override
+	public void delete(Customer object) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteById(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Customer> findByLastName(String lastName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Customer> listAll() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

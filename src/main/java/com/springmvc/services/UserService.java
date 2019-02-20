@@ -3,6 +3,6 @@ package com.springmvc.services;
 import com.springmvc.entities.*;
 
 
-public interface UserService extends CRUDService<User>{
+public interface UserService extends CRUDService<User, Long>{
 	
 }

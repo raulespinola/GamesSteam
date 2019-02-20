@@ -1,5 +1,6 @@
 package com.springmvc.entities;
 
+import java.io.Serializable;
 import java.time.OffsetDateTime;
 
 import javax.persistence.*;
@@ -8,7 +9,7 @@ import lombok.*;
 
 @Data
 @MappedSuperclass
-public abstract class BaseEntity {
+public abstract class BaseEntity implements Serializable {
 
 	@Id
 	@Column(name = "ID", nullable = false)

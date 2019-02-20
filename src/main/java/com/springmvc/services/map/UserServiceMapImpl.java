@@ -28,11 +28,11 @@ public class UserServiceMapImpl extends AbstractMapService implements UserServic
 	}
 
 
-	@Override
-	public List<BaseEntityName> listAll() {
-		// TODO Auto-generated method stub
-		return super.listAll();
-	}
+//	@Override
+//	public List<User> listAll() {
+//		// TODO Auto-generated method stub
+//		return super.listAll();
+//	}
 
 	@Override
 	public User getById(Long id) {
@@ -50,6 +50,24 @@ public class UserServiceMapImpl extends AbstractMapService implements UserServic
 	public User saveOrUpdate(User user) {
 		// TODO Auto-generated method stub
 		return (User) super.saveOrUpdate((User) user);
+	}
+
+	@Override
+	public List<User> listAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delete(User object) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteById(Long id) {
+		// TODO Auto-generated method stub
+		
 	}
 
 

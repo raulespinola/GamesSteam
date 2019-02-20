@@ -26,7 +26,7 @@ public class UserServiceJpaDAOImpl extends AbstractJpaDAOService  implements Use
 	
 	
 	@Override
-	public List<?> listAll() {
+	public List<User> listAll() {
 		EntityManager em= emf.createEntityManager();
 		
 		return em.createQuery("from User", User.class).getResultList();
@@ -56,11 +56,21 @@ public class UserServiceJpaDAOImpl extends AbstractJpaDAOService  implements Use
 	}
 
 	@Override
-	public void delete(Long id) {
+	public void deleteById(Long id) {
 		EntityManager em= emf.createEntityManager();
 		
 		em.getTransaction().begin();
 		em.remove(em.find(User.class, id));
+		em.getTransaction().commit();
+		
+	}
+	
+	@Override
+	public void delete(User user) {
+		EntityManager em= emf.createEntityManager();
+		
+		em.getTransaction().begin();
+		em.remove(em.find(User.class, user));
 		em.getTransaction().commit();
 		
 	}
