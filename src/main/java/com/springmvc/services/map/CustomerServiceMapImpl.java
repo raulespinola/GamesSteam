@@ -34,7 +34,7 @@ public class CustomerServiceMapImpl extends AbstractMapService<Customer, Long> i
 	
 	@Override
 	public Customer getById(Long id) {
-		return (Customer) super.getById(id);
+		return super.getById(id);
 		
 	}
 
@@ -46,8 +46,7 @@ public class CustomerServiceMapImpl extends AbstractMapService<Customer, Long> i
 	
 	@Override
 	public Customer saveOrUpdate(Customer customer) {
-		// TODO Auto-generated method stub
-		return (Customer) super.saveOrUpdate(customer.getId(), (Customer) customer);
+		return super.saveOrUpdate(customer);
 	}
 
 
@@ -100,6 +99,8 @@ public class CustomerServiceMapImpl extends AbstractMapService<Customer, Long> i
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
 
 	
 

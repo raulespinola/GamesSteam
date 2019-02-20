@@ -34,19 +34,19 @@ public class UserServiceMapImpl extends AbstractMapService<User, Long> implement
 
 	@Override
 	public void deleteById(Long id) {
-		// TODO Auto-generated method stub
+
 		super.deleteById(id);
 	}
 	
 	@Override
 	public User saveOrUpdate(User user) {
-		// TODO Auto-generated method stub
-		return (User) super.saveOrUpdate(user.getId(), user);
+
+		return super.saveOrUpdate(user);
 	}
 
 	@Override
 	public void delete(User object) {
-		// TODO Auto-generated method stub
+
 		
 	}
 
