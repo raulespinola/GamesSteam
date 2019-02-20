@@ -2,7 +2,9 @@ package com.springmvc.services;
 
 import java.util.*;
 
-
+/*
+ * CRUD Service
+ */
 public interface CRUDService<T, ID> {
 
     List<T>listAll();
