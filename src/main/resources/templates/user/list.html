@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Listado de Usuarios</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<div class="container">
+	<div th:if="${not #lists.isEmpty(users)}">	
+	<h2>User List</h2>
+			<table class="table table-striped">
+				<tr>
+					<th>id</th>
+					<th>name</th>
+					<th>password</th>
+					<th>Customer</th>
+					<th>View</th>
+					<th>Edit</th>
+					<th>Delete</th>	
+				</tr>
+				<tr th:each="user : ${users}">
+					<td th:text="${user.id}"></td>
+					<td th:text="${user.Name}"></td>
+					<td th:text="${user.password}"></td>
+					<td th:text="${user.customer}"></td>	
+				   <td><a th:href="${'/user/show/' + user.id}">View</a></td>	
+					<td><a th:href="${'/user/edit/' + user.id}">Edit</a></td>
+					<td><a th:href="${'/user/delete/' + user.id}">Delete</a></td>		
+					
+				</tr>			
+			</table>
+			<div><a th:href="${'/user/new'}">New User</a></div>	
+	</div>	
+</div>
+</body>
+</html>
