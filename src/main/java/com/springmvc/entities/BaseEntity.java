@@ -23,6 +23,14 @@ public abstract class BaseEntity implements Serializable {
 	//Check the date format
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private OffsetDateTime creationDate;
+	
+	@Column(name = "edition_date")
+	//Check the date format
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private OffsetDateTime editionDate;
+	
+	@Column(name = "delete_date")
+	//Check the date format
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private OffsetDateTime deleteDate;
 }
