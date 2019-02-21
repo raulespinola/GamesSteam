@@ -1,5 +1,7 @@
 package com.springmvc.entities;
 
+import java.util.Set;
+
 import javax.persistence.*;
 
 import lombok.Data;
@@ -15,6 +17,8 @@ public class User extends BaseEntityName {
 	@OneToOne (cascade= CascadeType.ALL)
 	private Customer customer;
 	
+	@OneToMany
+	private Set<UserItem> userItem;
 	
 	public User() {
 	}
