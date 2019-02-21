@@ -12,10 +12,9 @@ public class UserItem {
 	private Long userId;
 	private Long gameId;
 	
-	@OneToOne()
+	@OneToOne
 	private User user;
 	
-	@OneToOne()
+	@OneToOne
 	private Item item;
-	
 }

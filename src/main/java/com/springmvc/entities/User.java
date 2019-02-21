@@ -17,7 +17,10 @@ public class User extends BaseEntityName {
 	@OneToOne (cascade= CascadeType.ALL)
 	private Customer customer;
 	
-	@OneToMany
+	@ManyToMany
+	@JoinTable(name ="UserItem2",
+			joinColumns =@JoinColumn(name = "userId"), 
+				inverseJoinColumns = @JoinColumn(name = "itemId"))
 	private Set<UserItem> userItem;
 	
 	public User() {
