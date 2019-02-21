@@ -21,7 +21,7 @@ public class User extends BaseEntityName {
 	@OneToOne (cascade= CascadeType.ALL)
 	private Customer customer;
 	
-	@OneToMany
+	@OneToMany (mappedBy="user",fetch=FetchType.LAZY) 
 	private Set<UserItem> userItem;
 	
 	public User() {

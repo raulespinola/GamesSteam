@@ -9,22 +9,19 @@ import javax.persistence.Id;
 import java.util.*;
 
 @Embeddable
-@Table(name= "uiid")
-public class UserItemId implements Serializable {
+public class CompositeId implements Serializable {
 
 	
-	@Column(name = "userId", nullable = false)
+	@Column
 	private Long userId;
 	
-	@Column(name = "itemId", nullable = false)
-	private Long itemId;
-
+	@Column
+	private Long itemId;	
 	
-	
-	public UserItemId() {
+	public CompositeId() {
 	}
 
-	public UserItemId(Long userId, Long itemId) {
+	public CompositeId(Long userId, Long itemId) {
 		this.userId = userId;
 		this.itemId = itemId;
 	}
@@ -33,9 +30,9 @@ public class UserItemId implements Serializable {
 	public boolean equals(Object o) {
 		if (this == o)
 			return true;
-		if (!(o instanceof UserItemId))
+		if (!(o instanceof CompositeId))
 			return false;
-		UserItemId that = (UserItemId) o;
+		CompositeId that = (CompositeId) o;
 		return Objects.equals(getUserId(), that.getUserId()) && Objects.equals(getItemId(), that.getItemId());
 	}
 

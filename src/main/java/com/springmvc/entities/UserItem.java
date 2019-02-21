@@ -11,11 +11,11 @@ import lombok.Data;
 public class UserItem {
 
 	@EmbeddedId
-	private UserItemId userItemId;
+	private CompositeId compositeId;
 	
-	@OneToOne
+	@ManyToOne
 	private User user;
 	
-	@OneToOne
+	@ManyToOne
 	private Item item;
 }
