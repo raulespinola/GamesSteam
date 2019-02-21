@@ -17,5 +17,10 @@ public class Customer extends Person  {
 	
     @OneToOne (cascade= CascadeType.ALL)
 	private Address addressBilling;
+    
+    public void setUser(User user) {
+    	this.user=user;
+    	user.setCustomer(this);
+    }
 		
 }
