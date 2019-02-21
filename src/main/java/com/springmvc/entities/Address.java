@@ -6,12 +6,9 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Address  {
+public class Address extends BaseEntity  {
 		
-	@Id
-	@Column(name = "ID", nullable = false)
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
+
 	private String street;
 	private String city;
 	private String state;

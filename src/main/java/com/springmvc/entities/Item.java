@@ -4,6 +4,9 @@ import java.util.Set;
 
 import javax.persistence.*;
 
+import lombok.Data;
+
+@Data
 public abstract class Item extends BaseEntityName {
 
 	
