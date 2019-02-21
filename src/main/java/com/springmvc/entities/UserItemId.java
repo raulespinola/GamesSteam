@@ -9,13 +9,14 @@ import javax.persistence.Id;
 import java.util.*;
 
 @Embeddable
+@Table(name= "uiid")
 public class UserItemId implements Serializable {
 
 	
 	@Column(name = "userId", nullable = false)
 	private Long userId;
 	
-	@Column(name = "gameId", nullable = false)
+	@Column(name = "itemId", nullable = false)
 	private Long itemId;
 
 	

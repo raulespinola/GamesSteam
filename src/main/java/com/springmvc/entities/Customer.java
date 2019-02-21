@@ -10,6 +10,7 @@ import lombok.*;
 @Data
 @Entity
 @Table(name="Customer")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Customer extends Person  {
 
 	@OneToOne (cascade= CascadeType.ALL)

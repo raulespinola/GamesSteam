@@ -9,10 +9,14 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name="User")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class User extends BaseEntityName {
 
 	@Transient
 	private String password;
+	
+	@Column(name = "email", nullable = true)
+	private String email;
 	
 	@OneToOne (cascade= CascadeType.ALL)
 	private Customer customer;

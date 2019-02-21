@@ -9,6 +9,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name= "Game")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Game extends Item {
 
 	@OneToMany

@@ -12,6 +12,5 @@ public abstract class BaseEntityName extends BaseEntity{
 	@Column(name = "name", nullable = false)
 	private String name;
 	
-	@Column(name = "email", nullable = true)
-	private String email;
+	
 }

@@ -7,6 +7,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name= "Mod")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Mod extends Item{
 
 	@OneToOne

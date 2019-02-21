@@ -7,7 +7,8 @@ import javax.persistence.*;
 import lombok.Data;
 
 @Data
-@MappedSuperclass
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class Item extends BaseEntityName {
 
 	
