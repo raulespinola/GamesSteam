@@ -8,7 +8,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table
+@Table(name= "Game")
 public class Game extends Item {
 
 	@OneToMany

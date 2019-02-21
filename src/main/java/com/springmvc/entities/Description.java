@@ -10,9 +10,9 @@ import lombok.*;
 @Table
 public class Description extends BaseEntity{
 
-	@OneToOne
+	
 	private String webDescription;
 	
-	@OneToOne
+	
 	private String mobileDescription;
 }

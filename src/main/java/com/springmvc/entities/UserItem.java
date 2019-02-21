@@ -1,16 +1,17 @@
 package com.springmvc.entities;
 
+
 import javax.persistence.*;
 
 import lombok.Data;
 
 @Data
 @Entity
-@Table
+@Table(name = "Useritem")
 public class UserItem {
 
-	private Long userId;
-	private Long gameId;
+	@EmbeddedId
+	private UserItemId userItemId;
 	
 	@OneToOne
 	private User user;

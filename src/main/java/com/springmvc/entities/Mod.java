@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table
+@Table(name= "Mod")
 public class Mod extends Item{
 
 	@OneToOne
