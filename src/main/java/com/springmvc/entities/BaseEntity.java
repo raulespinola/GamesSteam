@@ -9,6 +9,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.*;
 
+/*
+ * Add Comments Here
+ */
 @Data
 @MappedSuperclass
 public abstract class BaseEntity implements Serializable {
