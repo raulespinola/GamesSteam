@@ -40,8 +40,8 @@ public class SpringJPABootstrap {
 	@EventListener (ContextRefreshedEvent.class)
 	public void handleContextStart(ContextRefreshedEvent event) {
 		
-		loadCustomer();
-		loadUser();
+//		loadCustomer();
+//		loadUser();
 	}
 	
 	private void loadUser() {
