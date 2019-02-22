@@ -9,36 +9,36 @@ import javax.persistence.Id;
 import java.util.*;
 
 @Embeddable
-public class CompositeId implements Serializable {
+public class ItemUserId implements Serializable {
 
 	
 	@Column
 	private Long userId;
 	
 	@Column
-	private Long itemId;	
+	private Long gameId;	
 	
-	public CompositeId() {
+	public ItemUserId() {
 	}
 
-	public CompositeId(Long userId, Long itemId) {
+	public ItemUserId(Long userId, Long gameId) {
 		this.userId = userId;
-		this.itemId = itemId;
+		this.gameId = gameId;
 	}
 
 	@Override
 	public boolean equals(Object o) {
 		if (this == o)
 			return true;
-		if (!(o instanceof CompositeId))
+		if (!(o instanceof ItemUserId))
 			return false;
-		CompositeId that = (CompositeId) o;
-		return Objects.equals(getUserId(), that.getUserId()) && Objects.equals(getItemId(), that.getItemId());
+		ItemUserId that = (ItemUserId) o;
+		return Objects.equals(getUserId(), that.getUserId()) && Objects.equals(getGameId(), that.getGameId());
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(getUserId(), getItemId());
+		return Objects.hash(getUserId(), getGameId());
 	}
 
 	public Long getUserId() {
@@ -49,12 +49,12 @@ public class CompositeId implements Serializable {
 		this.userId = userId;
 	}
 
-	public Long getItemId() {
-		return itemId;
+	public Long getGameId() {
+		return gameId;
 	}
 
-	public void setItemId(Long itemId) {
-		this.itemId = itemId;
+	public void setGameId(Long gameId) {
+		this.gameId = gameId;
 	}
 
 	

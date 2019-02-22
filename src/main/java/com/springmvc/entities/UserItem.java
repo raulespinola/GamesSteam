@@ -11,7 +11,7 @@ import lombok.Data;
 public class UserItem {
 
 	@EmbeddedId
-	private CompositeId compositeId;
+	private ItemUserId itemUserId;
 	
 	@ManyToOne
 	private User user;
