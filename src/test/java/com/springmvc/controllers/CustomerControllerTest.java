@@ -19,6 +19,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import com.springmvc.entities.*;
+import com.springmvc.repositories.CustomerRepository;
 import com.springmvc.services.*;
 
 import static org.hamcrest.Matchers.*;
@@ -29,7 +30,7 @@ public class CustomerControllerTest {
 
 	
 	@Mock //Mockito Mock object
-	private CustomerService customerService;
+	private CustomerRepository customerService;
 	
 	@InjectMocks //setups up controller, and injects mock objects into it.
 	private CustomerController customerController;

@@ -1,5 +1,6 @@
 package com.springmvc.entities;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -22,7 +23,7 @@ public class User extends BaseEntityName {
 	private Customer customer;
 	
 	@OneToMany (mappedBy="user",fetch=FetchType.LAZY) 
-	private Set<UserItem> userItem;
+	private Set<UserItem> userItem = new HashSet<>();;
 	
 	public User() {
 	}

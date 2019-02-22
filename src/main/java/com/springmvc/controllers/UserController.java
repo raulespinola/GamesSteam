@@ -9,16 +9,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.springmvc.entities.Customer;
 import com.springmvc.entities.User;
-import com.springmvc.services.UserService;
+import com.springmvc.repositories.UserRepository;
 
 @Controller
 @RequestMapping("/user")
 public class UserController {
 
-	private UserService userService;
+	private UserRepository userService;
 
 	@Autowired
-	public void setUserService(UserService userService) {
+	public void setUserService(UserRepository userService) {
 		this.userService = userService;
 	}
 	

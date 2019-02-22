@@ -1,6 +1,7 @@
 package com.springmvc.services.jpa;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.persistence.*;
 
@@ -8,22 +9,14 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.springmvc.entities.*;
+import com.springmvc.repositories.UserRepository;
 import com.springmvc.services.*;
 
 @Service
 @Profile("jpadao")
-public class UserServiceJpaDAOImpl extends AbstractJpaDAOService  implements UserService {
+public class UserServiceJpaDAOImpl extends AbstractJpaDAOService  implements UserRepository {
 
 
-//	private EncryptionService encryptionService;
-	
-
-//	@Autowired
-//	public void setEncryptionService(EncryptionService encryptionService) {
-//		this.encryptionService = encryptionService;
-//	}
-
-	
 	
 	@Override
 	public List<User> listAll() {
@@ -72,6 +65,66 @@ public class UserServiceJpaDAOImpl extends AbstractJpaDAOService  implements Use
 		em.getTransaction().begin();
 		em.remove(em.find(User.class, user));
 		em.getTransaction().commit();
+		
+	}
+
+	@Override
+	public Optional<User> findByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public long count() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Optional<User> findById(Long var1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean existsById(Long var1) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Iterable<User> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Iterable<User> findAllById(Iterable<Long> var1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <S extends User> S save(S var1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <S extends User> Iterable<S> saveAll(Iterable<S> var1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteAll(Iterable<? extends User> var1) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteAll() {
+		// TODO Auto-generated method stub
 		
 	}
 }

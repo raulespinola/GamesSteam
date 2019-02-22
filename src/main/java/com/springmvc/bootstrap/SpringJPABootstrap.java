@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.springmvc.entities.*;
+import com.springmvc.repositories.CustomerRepository;
+import com.springmvc.repositories.UserRepository;
 import com.springmvc.services.*;
 
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -20,19 +22,19 @@ import org.springframework.context.event.EventListener;
 @Component
 public class SpringJPABootstrap {
 
-	private CustomerService customerService;
-	private UserService userService;
+	private CustomerRepository customerService;
+	private UserRepository userService;
 	
 	
 
 	@Autowired
-	public void setUserService(UserService userService) {
+	public void setUserService(UserRepository userService) {
 		this.userService = userService;
 	}
 
 	
 	@Autowired
-	public void setCustomerService(CustomerService customerService) {
+	public void setCustomerService(CustomerRepository customerService) {
 		this.customerService = customerService;
 	}
 	

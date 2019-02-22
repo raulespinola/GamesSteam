@@ -1,6 +1,6 @@
 package com.springmvc.entities;
 
-import java.util.Set;
+import java.util.*;
 
 import javax.persistence.*;
 
@@ -13,7 +13,7 @@ public abstract class Item extends BaseEntityName {
 
 	
 	@OneToMany (mappedBy="item",fetch=FetchType.LAZY) 
-	private Set<UserItem> userItem;
+	private Set<UserItem> userItem = new HashSet<>();
 	
 	@OneToOne
 	private Description description;

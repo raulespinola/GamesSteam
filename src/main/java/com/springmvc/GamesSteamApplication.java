@@ -6,7 +6,8 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan(basePackages = { "com.springmvc", "com.springmvc.entities", "com.springmvc.services",
-		"com.springmvc.controllers", "com.springmvc.bootstrap", "com.springmvc.services.map" })
+		"com.springmvc.controllers", "com.springmvc.bootstrap", "com.springmvc.services.map",
+		"com.springmvc.repositories" })
 public class GamesSteamApplication {
 
 	public static void main(String[] args) {

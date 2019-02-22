@@ -1,6 +1,7 @@
 package com.springmvc.services.jpa;
 
 import com.springmvc.entities.*;
+import com.springmvc.repositories.UserRepository;
 import com.springmvc.services.*;
 
 import java.util.*;
@@ -17,11 +18,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 @ActiveProfiles("jpadao")
 public class UserServiceJpaDAOImplTest {
 
-	private UserService userService;
+	private UserRepository userService;
 //	private ProductService productService;
 	
 	@Autowired
-	public void setUserService(UserService userService) {
+	public void setUserService(UserRepository userService) {
 		this.userService = userService;
 	}
 	

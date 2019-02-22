@@ -11,11 +11,12 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.springmvc.entities.*;
+import com.springmvc.repositories.CustomerRepository;
 import com.springmvc.services.*;
 
 @Service
 @Profile("jpadao")
-public class CustomerServiceJpaDAOImpl extends AbstractJpaDAOService implements CustomerService{
+public class CustomerServiceJpaDAOImpl extends AbstractJpaDAOService implements CustomerRepository{
 
 	
 	//private EncryptionService encryptionService;
@@ -83,5 +84,59 @@ public class CustomerServiceJpaDAOImpl extends AbstractJpaDAOService implements 
 		EntityManager em=emf.createEntityManager();
 		
 		return em.createQuery("from Customer where lastName='lastName'", Customer.class).getResultList();
+	}
+
+	@Override
+	public long count() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Optional<Customer> findById(Long var1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean existsById(Long var1) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Iterable<Customer> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Iterable<Customer> findAllById(Iterable<Long> var1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <S extends Customer> S save(S var1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <S extends Customer> Iterable<S> saveAll(Iterable<S> var1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteAll(Iterable<? extends Customer> var1) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteAll() {
+		// TODO Auto-generated method stub
+		
 	}
 }

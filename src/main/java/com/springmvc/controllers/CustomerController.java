@@ -8,16 +8,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.springmvc.entities.Customer;
-import com.springmvc.services.CustomerService;
+import com.springmvc.repositories.CustomerRepository;
 
 @Controller
 @RequestMapping("/customer")
 public class CustomerController {
 
-	private CustomerService customerService;
+	private CustomerRepository customerService;
 
 	@Autowired
-	public void setCustomerService(CustomerService customerService) {
+	public void setCustomerService(CustomerRepository customerService) {
 		this.customerService = customerService;
 	}
 	

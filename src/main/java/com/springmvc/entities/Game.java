@@ -1,6 +1,6 @@
 package com.springmvc.entities;
 
-import java.util.Set;
+import java.util.*;
 
 import javax.persistence.*;
 
@@ -13,6 +13,6 @@ import lombok.Data;
 public class Game extends Item {
 
 	@OneToMany
-	private Set<Item> mods;
+	private Set<Item> mods= new HashSet<>();
 	
 }

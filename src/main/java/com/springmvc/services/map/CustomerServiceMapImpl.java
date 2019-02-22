@@ -11,12 +11,13 @@ import com.springmvc.entities.Address;
 import com.springmvc.entities.BaseEntityName;
 import com.springmvc.entities.Customer;
 import com.springmvc.entities.User;
+import com.springmvc.repositories.CustomerRepository;
 import com.springmvc.services.*;
 
 
 @Service
 @Profile("map")
-public class CustomerServiceMapImpl extends AbstractMapService<Customer, Long> implements CustomerService{
+public class CustomerServiceMapImpl extends AbstractMapService<Customer, Long> implements CustomerRepository{
 
 	
 	
@@ -98,6 +99,54 @@ public class CustomerServiceMapImpl extends AbstractMapService<Customer, Long> i
 	public List<Customer> findByLastName(String lastName) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public long count() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Optional<Customer> findById(Long var1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean existsById(Long var1) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Iterable<Customer> findAllById(Iterable<Long> var1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <S extends Customer> S save(S var1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <S extends Customer> Iterable<S> saveAll(Iterable<S> var1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteAll(Iterable<? extends Customer> var1) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteAll() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	
