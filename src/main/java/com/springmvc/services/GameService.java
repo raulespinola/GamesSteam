@@ -7,5 +7,5 @@ import com.springmvc.entities.Game;
 
 public interface GameService extends CRUDService<Game, Long> {
 
-	List<Customer> findByName(String name);
+	List<Game> findByName(String name);
 }
