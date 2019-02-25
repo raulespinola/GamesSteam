@@ -16,6 +16,7 @@ public abstract class Item extends BaseEntityName {
 	private Set<UserItem> userItem = new HashSet<>();
 	
 	@OneToOne
+	@Column(name="desc_id")
 	private Description description;
 	
 	

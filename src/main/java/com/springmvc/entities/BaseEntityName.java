@@ -1,7 +1,8 @@
 package com.springmvc.entities;
 
-import javax.persistence.Column;
+import javax.persistence.*;
 import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.NotEmpty;
 
 import lombok.Data;
 
@@ -10,6 +11,7 @@ import lombok.Data;
 public abstract class BaseEntityName extends BaseEntity{
 
 	@Column(name = "name", nullable = false)
+	@NotEmpty
 	private String name;
 	
 	
