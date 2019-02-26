@@ -41,7 +41,7 @@ public class UserServiceJpaDAOImplTest {
 		user.setName("someusername");
 		user.setPassword("myPassword");
 		
-		User savedUser = userService.saveOrUpdate(user);
+		User savedUser = userService.save(user);
 		
 		assert savedUser.getId() != null;
 //		assert savedUser.getEncryptedPassword() != null;

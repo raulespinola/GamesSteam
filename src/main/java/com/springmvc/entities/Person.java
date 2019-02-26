@@ -30,7 +30,6 @@ public abstract class Person extends BaseEntityName{
 	private OffsetDateTime birthday;
 	
 	@OneToOne (cascade= CascadeType.ALL)
-	@Column(name = "address_personal_id")
 	private Address addressPersonal;
 	
 }

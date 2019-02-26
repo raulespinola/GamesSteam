@@ -7,17 +7,15 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "Useritems")
+@Table(name = "Useritem")
 public class UserItem {
 
 	@EmbeddedId
-	private ItemUserId itemUserId;
+	private ItemUserId id;
 	
 	@ManyToOne
-	@Column(name ="user_id")
 	private User user;
 	
 	@ManyToOne
-	@Column(name ="item_id")
 	private Item item;
 }

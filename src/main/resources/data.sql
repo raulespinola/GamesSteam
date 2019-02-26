@@ -1,13 +1,22 @@
+
+/* Customer */
+
+INSERT INTO CUSTOMER (id, creation_date, delete_date, edition_date, version, name, birth_date, email, last_name, phone, addresspersonal_id, addressbilling_id, user_id) VALUES 
+(1, NULL, NULL, NULL, 1, 'Raul', NULL, 'juan@gmail', 'Monchi','4567965', NULL, NULL, NULL);
+
+
 /* User */
 
-INSERT INTO User (id, creation_date, delete_date, edition_date, version, email, name, customer_id) VALUES 
-(1, NULL, NULL, NULL, 1, 'Monchi', 'hola@gmail', NULL);
 
 INSERT INTO User (id, creation_date, delete_date, edition_date, version, email, name, customer_id) VALUES 
-(2, NULL, NULL, NULL, 1, 'Juancito', 'juan@gmail', NULL);
+(1, NULL, NULL, NULL, 1, 'hola@gmail', 'Monchi', NULL);
 
 INSERT INTO User (id, creation_date, delete_date, edition_date, version, email, name, customer_id) VALUES 
-(3, NULL, NULL, NULL, 1, 'Joseson', 'juan@gmail', NULL);
+(2, NULL, NULL, NULL, 1, 'juan@gmail', 'Juancito', NULL);
+
+INSERT INTO User (id, creation_date, delete_date, edition_date, version, email, name, customer_id) VALUES 
+(3, NULL, NULL, NULL, 1, 'juan@gmail','Joseson', NULL);
+
 
 
 
@@ -25,21 +34,21 @@ INSERT INTO DESCRIPTION (id, creation_date, delete_date, edition_date, version, 
 (4, NULL, NULL, NULL, 1, 'Las Vegas Mods', 'Las Vegas Mod Exp Web');
 
 
-/* Games */
+/* Games 
 
-INSERT INTO GAME (id, creation_date, delete_date, edition_date, version, name, DESCRIPTION_ID) VALUES 
-(1, NULL, NULL, NULL, 1, 'Diablo 2', 1);
+INSERT INTO GAME (id, creation_date, delete_date, edition_date, version, name, DESCRIPTION_ID, GAMETYPE) VALUES 
+(1, NULL, NULL, NULL, 1, 'Diablo 2', 1, 'Action');
 
-INSERT INTO GAME (id, creation_date, delete_date, edition_date, version, name, DESCRIPTION_ID) VALUES 
-(2, NULL, NULL, NULL, 1, 'Fallout', 2);
+INSERT INTO GAME (id, creation_date, delete_date, edition_date, version, name, DESCRIPTION_ID, GAMETYPE) VALUES 
+(2, NULL, NULL, NULL, 1, 'Fallout', 2, 'Action');
+*/
 
-
-/* Mods */
+/* Mods 
 
 INSERT INTO MOD (id, creation_date, delete_date, edition_date, version, name, DESCRIPTION_ID, GAME_ID) VALUES 
 (1, NULL, NULL, NULL, 1, 'Destiny Fate', 3, 1);
 
 INSERT INTO MOD (id, creation_date, delete_date, edition_date, version, name, DESCRIPTION_ID, GAME_ID) VALUES 
 (2, NULL, NULL, NULL, 1, 'Las Vegas', 4, 2);
-
+*/
 

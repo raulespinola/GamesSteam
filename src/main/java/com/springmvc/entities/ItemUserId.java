@@ -12,10 +12,8 @@ import java.util.*;
 public class ItemUserId implements Serializable {
 
 	
-	@Column(name="user_id")
 	private Long userId;
 	
-	@Column(name="game_id")
 	private Long gameId;	
 	
 	public ItemUserId() {

@@ -25,14 +25,16 @@ public class UserController {
 	@RequestMapping({ "/list", "/" })
 	public String listUsers(Model model) {
 		
-		model.addAttribute("users", userService.listAll());
+		model.addAttribute("users", userService.findAll());
 		return "user/list";
 	}
 	
 	@RequestMapping("/show/{id}")
 	public String getUser(@PathVariable Long id, Model model) {
-		model.addAttribute("user", userService.getById(id));
-		return "user/show";
+		
+		userService.findById(id).ifPresent(o -> model.addAttribute("user", o));
+		//model.addAttribute("user", userService.findById(id));
+		return "user/show"; 
 	}
 	
 	@RequestMapping("/new")
@@ -43,13 +45,13 @@ public class UserController {
 
 	@RequestMapping("/edit/{id}")
 	public String edit(@PathVariable Long id, Model model) {
-		model.addAttribute("user", userService.getById(id));
+		model.addAttribute("user", userService.findById(id));
 		return "user/userform";
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
 	public String saveOrUpdate(User user) {
-		User savedUser = userService.saveOrUpdate(user);
+		User savedUser = userService.save(user);
 		return "redirect:/user/show/" + savedUser.getId();
 	}
 

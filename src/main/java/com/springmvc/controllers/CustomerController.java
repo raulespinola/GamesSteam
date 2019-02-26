@@ -14,23 +14,25 @@ import com.springmvc.repositories.CustomerRepository;
 @RequestMapping("/customer")
 public class CustomerController {
 
-	private CustomerRepository customerService;
-
 	@Autowired
-	public void setCustomerService(CustomerRepository customerService) {
-		this.customerService = customerService;
-	}
+	private CustomerRepository customerRepository;
+
+//	@Autowired
+//	public void setCustomerService(CustomerRepository customerRepository) {
+//		this.customerRepository = customerRepository;
+//	}
 	
 	@RequestMapping({ "/list", "/" })
 	public String listCustomers(Model model) {
 		
-		model.addAttribute("customers", customerService.listAll());
+		model.addAttribute("customers", customerRepository.findAll());
 		return "customer/list";
 	}
 	
 	@RequestMapping("/show/{id}")
 	public String getCustomer(@PathVariable Long id, Model model) {
-		model.addAttribute("customer", customerService.getById(id));
+		
+		customerRepository.findById(id).ifPresent(o -> model.addAttribute("customer", o));
 		return "customer/show";
 	}
 	
@@ -42,19 +44,19 @@ public class CustomerController {
 
 	@RequestMapping("/edit/{id}")
 	public String edit(@PathVariable Long id, Model model) {
-		model.addAttribute("customer", customerService.getById(id));
+		model.addAttribute("customer",customerRepository.findById(id));
 		return "customer/customerform";
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
 	public String saveOrUpdate(Customer customer) {
-		Customer savedCustomer = customerService.saveOrUpdate(customer);
+		Customer savedCustomer =customerRepository.save(customer);
 		return "redirect:/customer/show/" + savedCustomer.getId();
 	}
 
 	@RequestMapping("/delete/{id}")
 	public String delete(@PathVariable Long id) {
-		customerService.deleteById(id);
+		customerRepository.deleteById(id);
 		return "redirect:/customer/list";
 	}
 	

@@ -11,7 +11,6 @@ import lombok.Data;
 public abstract class BaseEntityName extends BaseEntity{
 
 	@Column(name = "name", nullable = false)
-	@NotEmpty
 	private String name;
 	
 	

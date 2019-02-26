@@ -9,7 +9,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name="users")
+@Table(name="user")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class User extends BaseEntityName {
 
@@ -20,18 +20,9 @@ public class User extends BaseEntityName {
 	private String email;
 	
 	@OneToOne (cascade= CascadeType.ALL)
-	@Column(name = "customer_id")
 	private Customer customer;
 	
 	@OneToMany (mappedBy="user",fetch=FetchType.LAZY) 
-	private Set<UserItem> userItem = new HashSet<>();;
-	
-	public User() {
-	}
-	
-	public User(String name, String password) {
-		super.setName(name);
-		this.password = password;
-	}	
+	private Set<UserItem> userItem = new HashSet<>();
 	
 }

@@ -6,11 +6,10 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name= "mods")
+@Table(name= "mod")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Mod extends Item{
 
 	@OneToOne
-	@Column(name ="game_id")
 	private Game game;
 }
