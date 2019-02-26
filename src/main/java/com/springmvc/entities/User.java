@@ -16,7 +16,7 @@ public class User extends BaseEntityName {
 	@Transient
 	private String password;
 	
-	@Column(name = "email", nullable = true)
+	@Column(name = "email")
 	private String email;
 	
 	@OneToOne (cascade= CascadeType.ALL)

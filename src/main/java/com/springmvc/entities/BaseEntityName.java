@@ -10,8 +10,7 @@ import lombok.Data;
 @MappedSuperclass
 public abstract class BaseEntityName extends BaseEntity{
 
-	@Column(name = "name", nullable = false)
-	private String name;
-	
+	@Column(name = "name")
+	private String name;	
 	
 }

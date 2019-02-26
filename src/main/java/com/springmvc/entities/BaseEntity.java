@@ -17,8 +17,8 @@ import lombok.*;
 public abstract class BaseEntity implements Serializable {
 
 	@Id
-	@Column(name = "id", nullable = false)
-    @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id", updatable = false, nullable = false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 	private Integer version;
 	

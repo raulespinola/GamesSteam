@@ -49,7 +49,7 @@ public class CustomerController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public String saveOrUpdate(Customer customer) {
+	public String save(Customer customer) {
 		Customer savedCustomer =customerRepository.save(customer);
 		return "redirect:/customer/show/" + savedCustomer.getId();
 	}
