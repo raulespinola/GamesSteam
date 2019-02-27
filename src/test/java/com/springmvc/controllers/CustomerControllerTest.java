@@ -7,6 +7,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -24,6 +25,7 @@ import com.springmvc.services.*;
 
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.*;
 
 public class CustomerControllerTest {
@@ -60,17 +62,19 @@ public class CustomerControllerTest {
 		
 	}
 	
-//	@Test
-//	public void testShow() throws Exception{
-//		Long id=1L;
-//		when(customerService.getById(id)).thenReturn(new Customer());
-//		
-//		mockMvc.perform(get("/customer/show/1"))
-//			.andExpect(status().isOk())
-//			.andExpect(view().name("customer/show"))
-//			.andExpect(model().attribute("customer", instanceOf(Customer.class)));
-//			
-//	}
+	@Test
+	public void testShow() throws Exception{
+		Long id=1L;
+		
+		Optional<Customer> opt = customerService.findById(id);
+		when((Customer) Optional.ofNullable(null).orElse(opt)).thenReturn(new Customer());
+		
+		mockMvc.perform(get("/customer/show/1"))
+			.andExpect(status().isOk())
+			.andExpect(view().name("customer/show"))
+			.andExpect(model().attribute("customer", instanceOf(Customer.class)));
+			
+	}
 	
 	@Test
 	public void testNewCustomer() throws Exception{
@@ -82,16 +86,29 @@ public class CustomerControllerTest {
 			.andExpect(model().attribute("customer", instanceOf(Customer.class)));
 	}
 	
-//	@Test
-//	public void testEdit() throws Exception{
-//		Long id=1L;
-//		when(customerService.findById(id)).thenReturn(new Customer());
-//		
-//		mockMvc.perform(get("/customer/edit/1"))
-//			.andExpect(status().isOk())
-//			.andExpect(view().name("customer/customerform"))
-//			.andExpect(model().attribute("customer", instanceOf(Customer.class)));
-//	}
+	@Test
+	public void testEdit() throws Exception{
+		Long id=1L;	
+		
+		String name = "Test Description";
+		String lastName = "Hello";
+		String phone= "456123";
+		
+		Customer returnCustomer = new Customer();
+		Address billingAddress = new Address();
+		returnCustomer.setId(id);
+		returnCustomer.setName(name);
+		returnCustomer.setLastName(lastName);
+		returnCustomer.setPhone(phone);
+		
+		when(customerService.save(Mockito.<Customer>any())).thenReturn(returnCustomer);
+		when(customerService.findById(id).get()).thenReturn(new Customer());
+		
+		mockMvc.perform(get("/customer/edit/1"))
+			.andExpect(status().isOk())
+			.andExpect(view().name("customer/customerform"))
+			.andExpect(model().attribute("customer", instanceOf(Customer.class)));
+	}
 	
 	@Test
 	public void testSaveOrUpdate() throws Exception {

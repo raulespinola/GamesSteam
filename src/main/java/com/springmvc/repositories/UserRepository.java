@@ -10,5 +10,5 @@ import com.springmvc.entities.*;
 
 
 public interface UserRepository extends CrudRepository<User, Long>{
-	Optional<User> findByName(String name);
+	List<User> findByName(String name);
 }

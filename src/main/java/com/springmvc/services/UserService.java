@@ -8,5 +8,5 @@ import com.springmvc.entities.*;
 
 
 public interface UserService extends CRUDService<User, Long>{
-	Optional<User> findByName(String name);
+	List<User> findByName(String name);
 }

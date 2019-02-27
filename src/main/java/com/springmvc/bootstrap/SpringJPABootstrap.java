@@ -23,71 +23,71 @@ import org.springframework.context.event.EventListener;
 public class SpringJPABootstrap {
 
 //	private CustomerRepository customerService;
-//	private UserRepository userService;
-//	
-//	
-//
-//	@Autowired
-//	public void setUserService(UserRepository userService) {
-//		this.userService = userService;
-//	}
-//
-//	
+////	private UserRepository userService;
+////	
+////	
+////
+////	@Autowired
+////	public void setUserService(UserRepository userService) {
+////		this.userService = userService;
+////	}
+////
+////	
 //	@Autowired
 //	public void setCustomerService(CustomerRepository customerService) {
 //		this.customerService = customerService;
 //	}
-	
 //	
+////	
 //	@EventListener (ContextRefreshedEvent.class)
 //	public void handleContextStart(ContextRefreshedEvent event) {
 //		
-////		loadCustomer();
+//		//loadCustomer();
 ////		loadUser();
 //	}
+////	
+////	private void loadUser() {
+////		User user1= new User();
+////		user1.setName("Raul");
+////		user1.setPassword("nuevo");
+////		user1.setCustomer((Customer)customerService.listAll().get(0));
+////		userService.saveOrUpdate(user1);
+////		
+////		
+////	}
 //	
-//	private void loadUser() {
-//		User user1= new User();
-//		user1.setName("Raul");
-//		user1.setPassword("nuevo");
-//		user1.setCustomer((Customer)customerService.listAll().get(0));
-//		userService.saveOrUpdate(user1);
-//		
-//		
-//	}
-	
-//	private void loadCarts() {
-//		List<User> users = (List<User>) userService.listAll();
-//		List<Product> products = (List<Product>) productService.listAll();
-//		
-//		users.forEach(user ->{
-//			user.setCart(new Cart());
-//			CartDetail cartDetail = new CartDetail();
-//			cartDetail.setProduct(products.get(0));
-//			cartDetail.setQuantity(2);
-//			user.getCart().addCartDetail(cartDetail);
-//			userService.saveOrUpdate(user);
-//		});
-//	}
+////	private void loadCarts() {
+////		List<User> users = (List<User>) userService.listAll();
+////		List<Product> products = (List<Product>) productService.listAll();
+////		
+////		users.forEach(user ->{
+////			user.setCart(new Cart());
+////			CartDetail cartDetail = new CartDetail();
+////			cartDetail.setProduct(products.get(0));
+////			cartDetail.setQuantity(2);
+////			user.getCart().addCartDetail(cartDetail);
+////			userService.saveOrUpdate(user);
+////		});
+////	}
+////	
+////	private void loadOrderHistory() {
+////		List<User> users = (List<User>) userService.listAll();
+////		List<Product> products = (List<Product>) productService.listAll();
+////		
+////		users.forEach(user ->{
+////			Order order = new Order();
+////			order.setCustomer(user.getCustomer());
+////			order.setOrderstatus(OrderStatus.SHIPPED);
+////			
+////			products.forEach(product ->{
+////				OrderLine orderLine = new OrderLine();
+////				orderLine.setProduct(product);
+////				orderLine.setQuantity(1);
+////				order.addOrderLine(orderLine);						
+////			});
+////		});
+////	}
 //	
-//	private void loadOrderHistory() {
-//		List<User> users = (List<User>) userService.listAll();
-//		List<Product> products = (List<Product>) productService.listAll();
-//		
-//		users.forEach(user ->{
-//			Order order = new Order();
-//			order.setCustomer(user.getCustomer());
-//			order.setOrderstatus(OrderStatus.SHIPPED);
-//			
-//			products.forEach(product ->{
-//				OrderLine orderLine = new OrderLine();
-//				orderLine.setProduct(product);
-//				orderLine.setQuantity(1);
-//				order.addOrderLine(orderLine);						
-//			});
-//		});
-//	}
-	
 //	private void loadCustomer() {
 //		
 //		
@@ -124,7 +124,7 @@ public class SpringJPABootstrap {
 //		
 //		customer1.setUser(user2);
 //		
-//		customerService.saveOrUpdate(customer1);	
+//		customerService.save(customer1);	
 //		
 //		
 //		//Customer 2
@@ -154,40 +154,40 @@ public class SpringJPABootstrap {
 //		customer2.setAddressPersonal(address1);
 //		
 //		//add customer to map
-//		customerService.saveOrUpdate(customer2);	
+//		customerService.save(customer2);	
 //		
 //	}
-
-//	public void loadProducts() {
 //
-//		
-//		Product product1 = new Product();
-//		product1.setDescription("Product 1");
-//		product1.setPrice(new BigDecimal("12.99"));
-//		product1.setImageUrl("http://example.com/product1");
-//		
-//		productService.saveOrUpdate(product1);
-//		
-//		Product product2 = new Product();
-//		product2.setDescription("Product 2");
-//		product2.setPrice(new BigDecimal("12.99"));
-//		product2.setImageUrl("http://example.com/product2");
-//		
-//		productService.saveOrUpdate(product2);
-//		
-//		Product product3 = new Product();
-//		product3.setDescription("Product 3");
-//		product3.setPrice(new BigDecimal("12.99"));
-//		product3.setImageUrl("http://example.com/product3");
-//		
-//		productService.saveOrUpdate(product3);
-//		
-//		Product product4 = new Product();
-//		product4.setDescription("Product 4");
-//		product4.setPrice(new BigDecimal("12.99"));
-//		product4.setImageUrl("http://example.com/product4");
-//		
-//		productService.saveOrUpdate(product4);
-//	}
+////	public void loadProducts() {
+////
+////		
+////		Product product1 = new Product();
+////		product1.setDescription("Product 1");
+////		product1.setPrice(new BigDecimal("12.99"));
+////		product1.setImageUrl("http://example.com/product1");
+////		
+////		productService.saveOrUpdate(product1);
+////		
+////		Product product2 = new Product();
+////		product2.setDescription("Product 2");
+////		product2.setPrice(new BigDecimal("12.99"));
+////		product2.setImageUrl("http://example.com/product2");
+////		
+////		productService.saveOrUpdate(product2);
+////		
+////		Product product3 = new Product();
+////		product3.setDescription("Product 3");
+////		product3.setPrice(new BigDecimal("12.99"));
+////		product3.setImageUrl("http://example.com/product3");
+////		
+////		productService.saveOrUpdate(product3);
+////		
+////		Product product4 = new Product();
+////		product4.setDescription("Product 4");
+////		product4.setPrice(new BigDecimal("12.99"));
+////		product4.setImageUrl("http://example.com/product4");
+////		
+////		productService.saveOrUpdate(product4);
+////	}
 
 }
